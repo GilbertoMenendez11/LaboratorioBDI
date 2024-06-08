@@ -6,6 +6,42 @@ insert into millas(idMillas, Millas) values
 	('3', '45000'),
 	('4', '17000'),
 	('5', '5000');
+    
+-- Tablas de pais
+insert into pais(idPais, pais)
+values
+	('1','El Salvador'),
+    ('2','Estados Unidos'),
+    ('3','Colombia'),
+    ('4','Argentina'),
+    ('5','Canada');
+
+-- Tablas de estado
+insert into estado(idEstado, estado, idPais)
+values
+	('1','Sonsonate','1'),
+    ('2','California','2'),
+    ('3','Medellin','3'),
+    ('4','La Plata','4'),
+    ('5','Toronto','5');
+    
+ -- Tablas de ciudad
+insert into ciudad(idCiudad, ciudad, idEstado)
+values
+	('1','San Salvador','1'),
+    ('2','New York','2'),
+    ('3','Bogota','3'),
+    ('4','Buenos Aires','4'),
+    ('5','Toronto','5');
+ 
+-- Tablas de direcciones
+insert into direcciones(linea1, idCiudad, codigoPostal)
+values
+	('Colonia santa lucia casa 5','1','01116'),
+    ('30, 150 East 58th St, Planta 30, New York, NY 10155','2','10155'),
+    ('Cl. 59 #56 - 63, BogotÃ¡, Colombia','3','110911'),
+    ('Zona Rural, B6439 Laguna Alsina, Provincia de Buenos Aires, Argentina','4','6439'),
+    ('8605 Nelson Ave, Burnaby, BC V5J 3G2, CanadÃ¡','5','7690');
 
 -- Tablas de aeropuerto
 insert into aeropuerto(idAeropuerto, codigoAeropuerto, Nombre, idDireccion) values
@@ -73,6 +109,15 @@ insert into origen(idOrigen, idAeropuerto) values
 	('4', '2'),
 	('5', '3');
     
+-- Tablas de clases
+insert into clases (clase)
+values
+	('Primera Clase'),
+    ('Ejecutiva'),
+    ('Premiun'),
+    ('Turista'),
+    ('Preferente');
+    
 -- Tablas de aeronave
 insert into aeronave(idAeronave, Modelo, envergadura, capacidad, marca, idClases) values
 	('1', 'A320neo', '358', '186', 'Airbus', '1'),
@@ -90,15 +135,6 @@ values
 	('4', '5'),
 	('5', '1');
     
--- Tablas de clases
-insert into clases (clase)
-values
-	('Primera Clase'),
-    ('Ejecutiva'),
-    ('Premiun'),
-    ('Turista'),
-    ('Preferente');
-
 -- Tablas de reservacion
 insert into reservacion (estado, idPago)
 values
@@ -161,75 +197,6 @@ values
     ('M','3'),
     ('L','4'),
     ('XXL','5');
-
-
--- Tablas de empleado    
-insert into empleado(idEmpleado, nombre, apellidos, DUI, idDireccion, pasaporte, idVisa, genero, celular, idCargo)
-values
-	('1','Gilberto', 'Menendez','06056367-9','1','B123456787','1','M','72290987','1'),
-	('2','Augusto', 'Ramirez','06056333-9','2','B121156787','1','M','79871234','2'),
-	('3','Fermin', 'Tarso','06053434-3','4','B121152287','1','M','71231234','3'),
-	('4','Enzo', 'Martinez','06056367-4','2','B156756787','1','M','76771234','4'),
-    ('5','Mario', 'Menendez','06786367-9','1','B123456457','1','M','72290987','5'),
-	('6','jorge', 'Ramirez','06476333-9','2','B121156477','1','M','79871124','6'),
-    ('7','tono', 'Pereira','02156367-1','3','B123423365','1','M','72292347','7'),
-	('8','Tana', 'Tarso','06055234-3','4','B121152587','1','M','71231474','8'),
-	('9','Juan', 'Martinez','06073367-4','2','B156746787','1','M','76743234','9'),
-    ('10','Dani', 'Huo','06073467-4','2','B146746787','1','M','76583234','10');
-    
--- Tablas de boleto
-insert into boleto (idBoleto, idPasajero, idReservacion, idVuelo, idAsiento, idSalida, idTarifa)
-values
-	('1','2','3','3','1','3','3'),
-    ('2','3','4','3','1','1','3'),
-    ('3','4','5','2','2','4','3'),
-    ('4','5','3','1','5','1','3'),
-    ('5','1','4','2','3','2','3');
-
-
--- Tablas de sobrecargo
-insert into sobrecargo(idSobrecargo, licencia, tipo, idEmpleado) values
-	('1', '0044078', 'A', '9');
-
--- Tablas de piloto
-insert into piloto(idPiloto, licencia, tipo, idEmpleado) values
-	('1', '7040078', 'A', '8');
-	
-    
--- Tablas de equipaje
-insert into equipaje(idEquipaje, idTipoEquipaje, idPasajero, Peso) values
-	('1', '1', '1', '8.01'),
-	('2', '1', '4', '45.64'),
-	('3', '3', '3', '50.85'),
-	('4', '3', '5', '55.00'),
-	('5', '2', '2', '28.50');
-
--- Tablas de pais
-insert into pais(idPais, pais)
-values
-	('1','El Salvador'),
-    ('2','Estados Unidos'),
-    ('3','Colombia'),
-    ('4','Argentina'),
-    ('5','Canada');
-
--- Tablas de estado
-insert into estado(idEstado, estado, idPais)
-values
-	('1','Sonsonate','1'),
-    ('2','California','2'),
-    ('3','Medellin','3'),
-    ('4','La Plata','4'),
-    ('5','Toronto','5');
-    
--- Tablas de ciudad
-insert into ciudad(idCiudad, ciudad, idEstado)
-values
-	('1','San Salvador','1'),
-    ('2','New York','2'),
-    ('3','Bogota','3'),
-    ('4','Buenos Aires','4'),
-    ('5','Toronto','5');
     
 -- Tablas de cargo
 insert into cargo(idcargo,cargo)
@@ -244,15 +211,6 @@ values
     ('8','Piloto'),
     ('9','Sobrecargo');
 
--- Tablas de direcciones
-insert into direcciones(linea1, idCiudad, codigoPostal)
-values
-	('Colonia santa lucia casa 5','1','01116'),
-    ('30, 150 East 58th St, Planta 30, New York, NY 10155','2','10155'),
-    ('Cl. 59 #56 - 63, Bogotá, Colombia','3','110911'),
-    ('Zona Rural, B6439 Laguna Alsina, Provincia de Buenos Aires, Argentina','4','6439'),
-    ('8605 Nelson Ave, Burnaby, BC V5J 3G2, Canadá','5','7690');
-    
 -- Tablas de visa
 insert into visa(numVisa, tipo, idPais)
 values
@@ -262,8 +220,44 @@ values
     ('234567890133333','Negocios','4'),
     ('456789012344444','Transito','5');
     
+-- Tablas de empleado    
+insert into empleado(idEmpleado, nombre, apellidos, DUI, idDireccion, pasaporte, idVisa, genero, celular, idCargo)
+values
+	('1','Gilberto', 'Menendez','06056367-9','1','B123456787','1','M','72290987','1'),
+	('2','Augusto', 'Ramirez','06056333-9','2','B121156787','1','M','79871234','2'),
+	('3','Fermin', 'Tarso','06053434-3','4','B121152287','1','M','71231234','3'),
+	('4','Enzo', 'Martinez','06056367-4','2','B156756787','1','M','76771234','4'),
+    ('5','Mario', 'Menendez','06786367-9','1','B123456457','1','M','72290987','5'),
+	('6','jorge', 'Ramirez','06476333-9','2','B121156477','1','M','79871124','6'),
+    ('7','tono', 'Pereira','02156367-1','3','B123423365','1','M','72292347','7'),
+	('8','Tana', 'Tarso','06055234-3','4','B121152587','1','M','71231474','8'),
+	('9','Juan', 'Martinez','06073367-4','2','B156746787','1','M','76743234','9');
+    
+-- Tablas de boleto
+insert into boleto (idBoleto, idPasajero, idReservacion, idVuelo, idAsiento, idSalida, idTarifa)
+values
+	('1','2','3','3','1','3','3'),
+    ('2','3','4','3','1','1','3'),
+    ('3','4','5','2','2','4','3'),
+    ('4','5','3','1','5','1','3'),
+    ('5','1','4','2','3','2','3');
+    
+-- Tablas de sobrecargo
+insert into sobrecargo(idSobrecargo, licencia, tipo, idEmpleado) values
+	('1', '0044078', 'A', '9');
 
-
+-- Tablas de piloto
+insert into piloto(idPiloto, licencia, tipo, idEmpleado) values
+	('1', '7040078', 'A', '8');
+	
+-- Tablas de equipaje
+insert into equipaje(idEquipaje, idTipoEquipaje, idPasajero, Peso) values
+	('1', '1', '1', '8.01'),
+	('2', '1', '4', '45.64'),
+	('3', '3', '3', '50.85'),
+	('4', '3', '5', '55.00'),
+	('5', '2', '2', '28.50');
+    
 insert into roles(rol) values
 	('SysAdmin'), -- 1
     ('Soporte'), -- 2
@@ -407,8 +401,6 @@ insert into asignacionrolesopciones (idRol, idOpcion) values
     ('8','18'), -- pais
     ('8','31'); -- usuariospasajero
     
-
-
 insert into usuarios(usuario, contrasenia, idRol, idEmpleado) values
 	('Admin_Gil','1234','1','1'), -- 1
 	('Sop_gil','1234','2','2'), -- 2
@@ -424,11 +416,3 @@ insert into usuariosPasajero(usuario, contrasenia, idRol, idPasajero) values
 	('Isaias_Garz','1234','8','3'), -- 3
 	('Milton_Mezqui','1234','8','4'), -- 4
 	('Samuel_Flor','1234','8','5'); -- 5
-
-
-
-
-
-
-
-
