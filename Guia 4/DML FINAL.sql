@@ -231,7 +231,14 @@ values
 	('6','jorge', 'Ramirez','06476333-9','2','B121156477','1','M','79871124','6'),
     ('7','tono', 'Pereira','02156367-1','3','B123423365','1','M','72292347','7'),
 	('8','Tana', 'Tarso','06055234-3','4','B121152587','1','M','71231474','8'),
-	('9','Juan', 'Martinez','06073367-4','2','B156746787','1','M','76743234','9');
+	('9','Juan', 'Martinez','06073367-4','2','B156746787','1','M','76743234','9'),
+    ('10','Dani', 'Huo','06073467-4','2','B146746787','1','M','76583234','6'),
+    ('11','David', 'Menjivar','0645234-3','4','B12115587','1','M','7676774','8'),
+    ('12','Frank', 'Cuellar','06052343-3','3','B12115587','1','M','7631474','8'),
+    ('13','Krav', 'Klokovish','06435234-3','5','B12152587','1','M','7831474','8'),
+    ('14','Joe','White','0635234-3','3','B121157587','1','M','7867474','8');
+
+
     
 -- Tablas de boleto
 insert into boleto (idBoleto, idPasajero, idReservacion, idVuelo, idAsiento, idSalida, idTarifa)
@@ -248,7 +255,10 @@ insert into sobrecargo(idSobrecargo, licencia, tipo, idEmpleado) values
 
 -- Tablas de piloto
 insert into piloto(idPiloto, licencia, tipo, idEmpleado) values
-	('1', '7040078', 'A', '8');
+	('2', '7040345', 'A', '11'),
+    ('3', '7034534', 'B', '12'),
+    ('4', '7043458', 'C', '13'),
+    ('5', '7045668', 'A', '14');
 	
 -- Tablas de equipaje
 insert into equipaje(idEquipaje, idTipoEquipaje, idPasajero, Peso) values
